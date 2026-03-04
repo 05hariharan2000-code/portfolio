@@ -1,0 +1,364 @@
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.Logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.navlink {
+    padding-left: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: lighter;
+    font-style: italic;
+    margin-right: 20px;
+}
+
+.nav-link:hover {
+    color: #00c6ff !important;
+}
+
+/* Home Section */
+.Homepage {
+    text-align: center;
+    padding: 120px 20px;
+}
+.profile-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;       
+    border-radius: 50%;       
+    display: block;
+    margin: 20px auto;        /* center image */
+    border: 4px solid #74c0fc;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.title {
+    color: white;
+    width: 70%;
+    margin: 0 auto;   /* This centers the block */
+}
+
+.title button {
+    padding: 12px 25px;
+    width: 160px;
+    border-radius: 30px;
+    border: none;
+    margin: 10px;
+    font-weight: 600;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.title button:hover {
+    transform: scale(1.05);
+}
+
+/* About */
+.about {
+    padding: 80px;
+        color: white;
+}
+
+.Atitle  h1{
+      margin-bottom: 15px;
+      color: cyan;
+}
+.Atitle {
+      text-align: center;
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: text-appear 1s ease forwards;
+    animation-delay: 0.3s;
+}
+.Alist h2{
+    color: #1c95c9;
+}
+.Asection h3{
+    color: #1c95c9;
+}
+.Atitle::after {
+    content: "";
+    width: 120px;
+    height: 4px;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+@keyframes text-appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.containerAbout {
+    animation: boxReveal 1s ease both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}
+
+@keyframes boxReveal {
+    from {
+        filter: saturate(0) contrast(4) brightness(.1) blur(2px);
+        opacity: 0;
+        transform: translateY(4rem) scale(.95);
+    }
+    to {
+        filter: none;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Skills */
+.skills {
+    padding: 80px 20px;
+    color: white;
+}
+
+/* Title */
+.Stitle {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.Stitle h1{
+     color: cyan;
+}
+
+.Stitle::after {
+    content: "";
+    width: 120px;
+    height: 4px;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* Skill Box */
+.slist {
+    border: 2px solid rgba(255,255,255,0.1);
+    background: #182a33;
+    padding: 25px;
+    width: 80%;
+    text-align: center;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    margin-left: 73px;
+}
+.slist i{
+    text-align: left;
+}
+
+.slist:hover {
+    transform: translateY(-5px);
+    border-color: #00c6ff;
+}
+
+.containerfadeup {
+    position: relative;
+}
+
+.containerfadeup::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: rgba(255,255,255,0.3);
+}
+.row.g-2 {
+    justify-content: center;
+}
+
+.containerfadeup{
+       animation: boxReveal 1s ease both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}
+
+@keyframes boxReveal {
+    from {
+        filter: saturate(0) contrast(4) brightness(.1) blur(2px);
+        opacity: 0;
+        transform: translateY(4rem) scale(.95);
+    }
+    to {
+        filter: none;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .Stitle{
+        margin-left: 80px;
+    }
+    .skills {
+        margin-left: -70px;
+    
+    }
+    .col-6{
+margin-left: -20px;
+    }
+        .containerfadeup::before {
+        display: none;
+    }
+}
+
+/* Projects */
+.projTitle{
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+.projTitle h1{
+    color: cyan;
+}
+.projTitle::after {
+    content: "";
+    width: 120px;
+    height: 4px;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s ease;
+}
+
+/* Overlay */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 32, 39, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    opacity: 0;
+    transition: 0.4s ease;
+    padding: 20px;
+}
+
+/* Button */
+.project-overlay a {
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    font-size: 14px;
+}
+
+/* Hover Effect */
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+.Contact {
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+}
+
+.Ctitle {
+    margin-bottom: 50px;
+}
+.Ctitle h1{
+    color: cyan;
+}
+
+.Ctitle::after {
+    content: "";
+    width: 120px;
+    height: 4px;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* Contact Cards */
+.contactlinks {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 30px 20px;
+    border-radius: 15px;
+    transition: 0.3s ease;
+}
+
+.contactlinks p {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 16px;
+
+}
+.contactlinks a{
+    text-decoration: none;
+   color: white;
+}
+/* Hover */
+.contactlinks:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 198, 255, 0.3);
+}
+
+
+/* Footer */
+.lastline {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.Cr {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+    color: white;
+}
