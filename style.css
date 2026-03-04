@@ -233,7 +233,69 @@ margin-left: -20px;
         display: none;
     }
 }
+/* Education Section */
+.education {
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+}
 
+/* Title */
+.Etitle {
+    margin-bottom: 50px;
+}
+
+.Etitle h1 {
+    color: cyan;
+}
+
+.Etitle::after {
+    content: "";
+    width: 120px;
+    height: 4px;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* Education Card */
+.education-card {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 15px;
+    height: 200px;
+    transition: 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+.education-card h3 {
+    color: #74c0fc;
+    margin-bottom: 10px;
+}
+
+.education-card h5 {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.education-card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 198, 255, 0.3);
+}
+
+
+.education .container {
+    animation: boxReveal 1s ease both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}
 /* Projects */
 .projTitle{
     text-align: center;
